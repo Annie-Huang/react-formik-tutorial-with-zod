@@ -39,4 +39,9 @@ npm warn EBADENGINE }
 
 PS C:\react>
 
+--------------------------------------
+
+
+PS C:\react\react-formik-tutorial-with-zod> npm install
+
 

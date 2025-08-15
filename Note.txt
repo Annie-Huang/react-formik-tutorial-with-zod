@@ -4,3 +4,39 @@ https://github.com/piyush-eon/react-formik-tutorial-with-zod
 https://github.com/Annie-Huang/react-formik-tutorial-with-zod
 
 -----------------------------------------------------------------------------
+
+PS C:\react> npm create vite@latest
+Need to install the following packages:
+create-vite@7.1.1
+Ok to proceed? (y) y
+
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'create-vite@7.1.1',
+npm warn EBADENGINE   required: { node: '^20.19.0 || >=22.12.0' },
+npm warn EBADENGINE   current: { node: 'v20.17.0', npm: '11.4.2' }
+npm warn EBADENGINE }
+
+> npx
+> create-vite
+
+│
+◇  Project name:
+│  react-formik-tutorial-with-zod
+│
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  TypeScript
+│
+◇  Scaffolding project in C:\react\react-formik-tutorial-with-zod...
+│
+└  Done. Now run:
+
+  cd react-formik-tutorial-with-zod
+  npm install
+  npm run dev
+
+PS C:\react>
+
+

@@ -4,23 +4,49 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { simulatedApi } from '../api/api.ts';
 import type { FormData } from '../types/types';
+import z from 'zod';
+
+// 🎯 Schema-first approach - this defines EVERYTHING!
+const formSchema = z.object({
+  firstName: z.string().min(1, 'First Name is required'),
+  lastName: z.string().min(1, 'Last Name is required'),
+  email: z.string().email('Invalid email address'),
+  age: z.number().min(18, 'You must be at least 18 years old'),
+  gender: z.enum(['male', 'female', 'other'], {
+    errorMap: () => ({ message: 'Gender is required' }),
+  }),
+  address: z.object({
+    city: z.string().min(1, 'City is required'),
+    state: z.string().min(1, 'State is required'),
+  }),
+  hobbies: z
+    .array(
+      z.object({
+        name: z.string().min(1, 'Hobby name is required'),
+      }),
+    )
+    .min(1, 'At least one hobby is required'),
+  startDate: z.date(),
+  subscribe: z.boolean(),
+  referral: z.string().default(''),
+});
 
 export const FormikWithZod: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    age: 18,
-    gender: '',
-    address: { city: '', state: '' },
-    hobbies: [{ name: '' }],
-    startDate: new Date(),
-    subscribe: false,
-    referral: '',
-  });
-
-  const [errors, setErrors] = useState<any>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [formData, setFormData] = useState<FormData>({
+  //   firstName: '',
+  //   lastName: '',
+  //   email: '',
+  //   age: 18,
+  //   gender: '',
+  //   address: { city: '', state: '' },
+  //   hobbies: [{ name: '' }],
+  //   startDate: new Date(),
+  //   subscribe: false,
+  //   referral: '',
+  // });
+  //
+  // const [errors, setErrors] = useState<any>({});
+  // const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<

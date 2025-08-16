@@ -45,3 +45,5 @@ PS C:\react>
 PS C:\react\react-formik-tutorial-with-zod> npm install
 PS C:\react\react-formik-tutorial-with-zod> npm run dev
 
+
+PS C:\react\react-formik-tutorial-with-zod> npm install react-datepicker

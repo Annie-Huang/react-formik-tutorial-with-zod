@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { simulatedApi } from '../api/api.ts';
 import type { FormData } from '../types/types';
 import z from 'zod';
+import { useFormik } from 'formik';
 
 // 🎯 Schema-first approach - this defines EVERYTHING!
 const formSchema = z.object({
@@ -47,6 +48,23 @@ export const FormikWithZod: React.FC = () => {
   //
   // const [errors, setErrors] = useState<any>({});
   // const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // ✨ Single hook replaces all that useState mess!
+  const formik = useFormik<FormData>({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      age: 18,
+      gender: '',
+      address: { city: '', state: '' },
+      hobbies: [{ name: '' }],
+      startDate: new Date(),
+      subscribe: false,
+      referral: '',
+    },
+    onSubmit: async () => {},
+  });
 
   const handleChange = (
     e: React.ChangeEvent<

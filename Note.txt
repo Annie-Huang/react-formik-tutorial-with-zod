@@ -46,6 +46,10 @@ PS C:\react\react-formik-tutorial-with-zod> npm install
 PS C:\react\react-formik-tutorial-with-zod> npm run dev
 
 PS C:\react\react-formik-tutorial-with-zod> npm install react-datepicker
+PS C:\react\react-formik-tutorial-with-zod> npm install formik zod zod-formik-adapter
 
+- Add Hobby is adding a list of hobbies.
+- When we tick 'Subscribe to Newsletter', then 'Referral Source' is required.
+- If you don't fill the form and submit, it will show error.
 
-When we tick 'Subscribe to Newsletter', then 'Referral Source' is required.
+- SimpleForm is the old way to deal with Form

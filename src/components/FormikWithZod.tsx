@@ -154,7 +154,8 @@ export const FormikWithZod: React.FC = () => {
             <option value='female'>Female</option>
             <option value='other'>Other</option>
           </select>
-          {errors.gender && (
+          {/*{errors.gender && (*/}
+          {touched.gender && errors.gender && (
             <p style={{ color: 'orangered' }}>{errors.gender}</p>
           )}
         </div>

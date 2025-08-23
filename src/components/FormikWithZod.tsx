@@ -319,7 +319,10 @@ export const FormikWithZod: React.FC = () => {
         </div>
       )}
 
-      {errors.root && <p style={{ color: 'red' }}>{errors.root}</p>}
+      {/*{errors.root && <p style={{ color: 'red' }}>{errors.root}</p>}*/}
+      {(errors as any).root && (
+        <p style={{ color: 'red' }}>{(errors as any).root}</p>
+      )}
 
       <button type='submit' disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit'}

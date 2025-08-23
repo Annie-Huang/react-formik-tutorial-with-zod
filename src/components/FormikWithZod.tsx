@@ -144,7 +144,13 @@ export const FormikWithZod: React.FC = () => {
 
       <div>
         <label>Gender</label>
-        <select name='gender' value={formData.gender} onChange={handleChange}>
+        {/*<select name='gender' value={formData.gender} onChange={handleChange}>*/}
+        <select
+          name='gender'
+          value={values.gender}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        >
           <option value=''>Select...</option>
           <option value='male'>Male</option>
           <option value='female'>Female</option>

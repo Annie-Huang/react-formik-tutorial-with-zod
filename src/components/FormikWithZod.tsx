@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { simulatedApi } from '../api/api.ts';
 import type { FormData } from '../types/types';
 import z from 'zod';
-import { useFormik } from 'formik';
+import { FieldArray, useFormik } from 'formik';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 
 // 🎯 Schema-first approach - this defines EVERYTHING!
@@ -235,6 +235,11 @@ export const FormikWithZod: React.FC = () => {
             )}
           </div>
         ))}
+        <FieldArray name='hobbies'>
+          {({ push, remove }) => {
+            return <div></div>;
+          }}
+        </FieldArray>
         <button type='button' onClick={addHobby}>
           Add Hobby
         </button>

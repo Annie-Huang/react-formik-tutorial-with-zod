@@ -301,7 +301,8 @@ export const FormikWithZod: React.FC = () => {
         />
       </div>
 
-      {formData.subscribe && (
+      {/*{formData.subscribe && (*/}
+      {values.subscribe && (
         <div>
           <label>Referral Source</label>
           <input

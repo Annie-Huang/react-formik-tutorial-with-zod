@@ -276,7 +276,8 @@ export const FormikWithZod: React.FC = () => {
                     )}
                   </div>
                 ))}
-                <button type='button' onClick={addHobby}>
+                {/*<button type='button' onClick={addHobby}>*/}
+                <button type='button' onClick={() => push({ name: '' })}>
                   Add Hobby
                 </button>
               </div>

@@ -306,11 +306,14 @@ export const FormikWithZod: React.FC = () => {
           <label>Referral Source</label>
           <input
             name='referral'
-            value={formData.referral}
+            // value={formData.referral}
+            value={values.referral}
             onChange={handleChange}
+            onBlur={handleBlur}
             placeholder='How did you hear about us?'
           />
-          {errors.referral && (
+          {/*{errors.referral && (*/}
+          {touched.referral && errors.referral && (
             <p style={{ color: 'orangered' }}>{errors.referral}</p>
           )}
         </div>

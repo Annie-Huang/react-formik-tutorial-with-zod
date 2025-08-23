@@ -6,6 +6,7 @@ import { simulatedApi } from '../api/api.ts';
 import type { FormData } from '../types/types';
 import z from 'zod';
 import { useFormik } from 'formik';
+import { toFormikValidationSchema } from 'zod-formik-adapter';
 
 // 🎯 Schema-first approach - this defines EVERYTHING!
 const formSchema = z.object({
@@ -64,6 +65,7 @@ export const FormikWithZod: React.FC = () => {
       referral: '',
     },
     onSubmit: async () => {},
+    validationSchema: toFormikValidationSchema(formSchema),
   });
 
   const handleChange = (

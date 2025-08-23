@@ -247,7 +247,9 @@ export const FormikWithZod: React.FC = () => {
                     <input
                       name='name'
                       value={hobby.name}
-                      onChange={(e) => handleHobbyChange(index, e)}
+                      // onChange={(e) => handleHobbyChange(index, e)}
+                      onChange={handleChange} // The handleChange can use the parent one?!?!
+                      onBlur={handleBlur}
                       placeholder='Hobby Name'
                     />
                     {errors.hobbies?.[index]?.name && (

@@ -163,7 +163,8 @@ export const FormikWithZod: React.FC = () => {
         <div>
           <label>Address</label>
           <input
-            name='city'
+            // name='city'
+            name='address.city'
             // value={formData.address.city}
             value={values.address.city}
             // onChange={(e) =>
@@ -182,7 +183,8 @@ export const FormikWithZod: React.FC = () => {
           )}
 
           <input
-            name='state'
+            // name='state'
+            name='address.state'
             // value={formData.address.state}
             value={values.address.state}
             // onChange={(e) =>
@@ -247,7 +249,8 @@ export const FormikWithZod: React.FC = () => {
                   {values.hobbies.map((hobby, index) => (
                     <div key={index}>
                       <input
-                        name='name'
+                        // name='name'
+                        name={`hobbies[${index}].name`}
                         value={hobby.name}
                         // onChange={(e) => handleHobbyChange(index, e)}
                         onChange={handleChange} // The handleChange can use the parent one?!?!

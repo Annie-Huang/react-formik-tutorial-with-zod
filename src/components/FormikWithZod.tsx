@@ -203,9 +203,13 @@ export const FormikWithZod: React.FC = () => {
       <div>
         <label>Start Date</label>
         <DatePicker
-          selected={formData.startDate}
+          // selected={formData.startDate}
+          selected={values.startDate}
+          // onChange={(date: Date | null) =>
+          //   setFormData({ ...formData, startDate: date || new Date() })
+          // }
           onChange={(date: Date | null) =>
-            setFormData({ ...formData, startDate: date || new Date() })
+            setFieldValue('startDate', date || new Date())
           }
         />
       </div>

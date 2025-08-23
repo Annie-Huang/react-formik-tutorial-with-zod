@@ -242,7 +242,8 @@ export const FormikWithZod: React.FC = () => {
           {({ push, remove }) => {
             return (
               <div>
-                {formData.hobbies.map((hobby, index) => (
+                {/*{formData.hobbies.map((hobby, index) => (*/}
+                {values.hobbies.map((hobby, index) => (
                   <div key={index}>
                     <input
                       name='name'
@@ -266,8 +267,10 @@ export const FormikWithZod: React.FC = () => {
                         </p>
                       )}
 
-                    {formData.hobbies.length > 1 && (
-                      <button type='button' onClick={() => removeHobby(index)}>
+                    {/*{formData.hobbies.length > 1 && (*/}
+                    {values.hobbies.length > 1 && (
+                      // <button type='button' onClick={() => removeHobby(index)}>
+                      <button type='button' onClick={() => remove(index)}>
                         Remove Hobby
                       </button>
                     )}

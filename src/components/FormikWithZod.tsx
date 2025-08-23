@@ -58,8 +58,21 @@ export const FormikWithZod: React.FC = () => {
       subscribe: false,
       referral: '',
     },
-    onSubmit: async () => {},
+
     validationSchema: toFormikValidationSchema(formSchema),
+
+    // onSubmit: async () => {},
+    onSubmit: async (values, { setFieldError, setSubmitting }) => {
+      try {
+        const response = await simulatedApi(values);
+        console.log('Success:', response);
+      } catch (error: any) {
+        console.error('Error:', error);
+        setFieldError('root' as any, error.message);
+      } finally {
+        setSubmitting(false);
+      }
+    },
   });
 
   const {

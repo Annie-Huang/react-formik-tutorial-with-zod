@@ -51,8 +51,7 @@ export const FormikWithZod: React.FC = () => {
   // const [isSubmitting, setIsSubmitting] = useState(false);
 
   // ✨ Single hook replaces all that useState mess!
-  // const formik = useFormik<FormData>({
-  const {
+  /*  const {
     values,
     errors,
     touched,
@@ -61,7 +60,8 @@ export const FormikWithZod: React.FC = () => {
     handleSubmit,
     setFieldValue,
     isSubmitting,
-  } = useFormik<FormData>({
+  } = useFormik<FormData>({*/
+  const formik = useFormik<FormData>({
     initialValues: {
       firstName: '',
       lastName: '',
@@ -78,8 +78,19 @@ export const FormikWithZod: React.FC = () => {
     validationSchema: toFormikValidationSchema(formSchema),
   });
 
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    setFieldValue,
+    isSubmitting,
+  } = formik;
+
   return (
-    <FormikProvider>
+    <FormikProvider value={formik}>
       <form
         onSubmit={handleSubmit}
         style={{ display: 'flex', flexDirection: 'column', gap: 5 }}

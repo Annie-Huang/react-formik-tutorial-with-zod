@@ -252,11 +252,19 @@ export const FormikWithZod: React.FC = () => {
                       onBlur={handleBlur}
                       placeholder='Hobby Name'
                     />
-                    {errors.hobbies?.[index]?.name && (
+                    {/*                    {errors.hobbies?.[index]?.name && (
                       <p style={{ color: 'orangered' }}>
                         {errors.hobbies[index].name}
                       </p>
-                    )}
+                    )}*/}
+                    {touched.hobbies?.[index]?.name &&
+                      errors.hobbies?.[index] &&
+                      typeof errors.hobbies[index] === 'object' &&
+                      (errors.hobbies[index] as any)?.name && (
+                        <p style={{ color: 'orangered' }}>
+                          {(errors.hobbies[index] as any)?.name}
+                        </p>
+                      )}
 
                     {formData.hobbies.length > 1 && (
                       <button type='button' onClick={() => removeHobby(index)}>

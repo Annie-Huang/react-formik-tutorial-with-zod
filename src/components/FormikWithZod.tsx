@@ -34,22 +34,6 @@ const formSchema = z.object({
 });
 
 export const FormikWithZod: React.FC = () => {
-  // const [formData, setFormData] = useState<FormData>({
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   age: 18,
-  //   gender: '',
-  //   address: { city: '', state: '' },
-  //   hobbies: [{ name: '' }],
-  //   startDate: new Date(),
-  //   subscribe: false,
-  //   referral: '',
-  // });
-  //
-  // const [errors, setErrors] = useState<any>({});
-  // const [isSubmitting, setIsSubmitting] = useState(false);
-
   // ✨ Single hook replaces all that useState mess!
   /*  const {
     values,

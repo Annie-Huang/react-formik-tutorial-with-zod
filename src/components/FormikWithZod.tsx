@@ -292,10 +292,12 @@ export const FormikWithZod: React.FC = () => {
           type='checkbox'
           id='sub'
           name='subscribe'
-          checked={formData.subscribe}
-          onChange={(e) =>
-            setFormData({ ...formData, subscribe: e.target.checked })
-          }
+          // checked={formData.subscribe}
+          checked={values.subscribe}
+          // onChange={(e) =>
+          //   setFormData({ ...formData, subscribe: e.target.checked })
+          // }
+          onChange={handleChange}
         />
       </div>
 

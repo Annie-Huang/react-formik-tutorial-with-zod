@@ -163,31 +163,39 @@ export const FormikWithZod: React.FC = () => {
         <label>Address</label>
         <input
           name='city'
-          value={formData.address.city}
-          onChange={(e) =>
-            handleChange({
-              ...e,
-              target: { ...e.target, name: 'address.city' },
-            })
-          }
+          // value={formData.address.city}
+          value={values.address.city}
+          // onChange={(e) =>
+          //   handleChange({
+          //     ...e,
+          //     target: { ...e.target, name: 'address.city' },
+          //   })
+          // }
+          onChange={handleChange}
+          onBlur={handleBlur}
           placeholder='City'
         />
-        {errors.address?.city && (
+        {/*{errors.address?.city && (*/}
+        {touched.address?.city && errors.address?.city && (
           <p style={{ color: 'orangered' }}>{errors.address.city}</p>
         )}
 
         <input
           name='state'
-          value={formData.address.state}
-          onChange={(e) =>
-            handleChange({
-              ...e,
-              target: { ...e.target, name: 'address.state' },
-            })
-          }
+          // value={formData.address.state}
+          value={values.address.state}
+          // onChange={(e) =>
+          //   handleChange({
+          //     ...e,
+          //     target: { ...e.target, name: 'address.state' },
+          //   })
+          // }
+          onChange={handleChange}
+          onBlur={handleBlur}
           placeholder='State'
         />
-        {errors.address?.state && (
+        {/*{errors.address?.state && (*/}
+        {touched.address?.state && errors.address?.state && (
           <p style={{ color: 'orangered' }}>{errors.address.state}</p>
         )}
       </div>

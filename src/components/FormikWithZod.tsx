@@ -133,8 +133,11 @@ export const FormikWithZod: React.FC = () => {
         <input
           type='number'
           name='age'
-          value={formData.age}
-          onChange={handleChange}
+          // value={formData.age}
+          value={values.age}
+          // onChange={handleChange}
+          onChange={(e) => setFieldValue('age', parseInt(e.target.value) || 0)} // need to change into number value
+          onBlur={handleBlur}
         />
         {errors.age && <p style={{ color: 'orangered' }}>{errors.age}</p>}
       </div>

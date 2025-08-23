@@ -87,10 +87,13 @@ export const FormikWithZod: React.FC = () => {
         <label>First Name</label>
         <input
           name='firstName'
-          value={formData.firstName}
+          // value={formData.firstName}
+          value={values.firstName}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
-        {errors.firstName && (
+        {/*{errors.firstName && (*/}
+        {touched.firstName && errors.firstName && (
           <p style={{ color: 'orangered' }}>{errors.firstName}</p>
         )}
       </div>
@@ -99,18 +102,30 @@ export const FormikWithZod: React.FC = () => {
         <label>Last Name</label>
         <input
           name='lastName'
-          value={formData.lastName}
+          // value={formData.lastName}
+          value={values.lastName}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
-        {errors.lastName && (
+        {/*{errors.lastName && (*/}
+        {touched.lastName && errors.lastName && (
           <p style={{ color: 'orangered' }}>{errors.lastName}</p>
         )}
       </div>
 
       <div>
         <label>Email</label>
-        <input name='email' value={formData.email} onChange={handleChange} />
-        {errors.email && <p style={{ color: 'orangered' }}>{errors.email}</p>}
+        {/*<input name='email' value={formData.email} onChange={handleChange} />*/}
+        <input
+          name='email'
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {/*{errors.email && <p style={{ color: 'orangered' }}>{errors.email}</p>}*/}
+        {touched.email && errors.email && (
+          <p style={{ color: 'orangered' }}>{errors.email}</p>
+        )}
       </div>
 
       <div>
